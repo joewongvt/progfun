@@ -23,3 +23,7 @@
 5/2:
 00:00-00:30:
 	* Pascal's triangle
+15:30-17:30
+	* Matching parens
+	* Start change
+	* Study/review session with Jordan

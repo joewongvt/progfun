@@ -25,10 +25,33 @@ object Main {
   /**
    * Exercise 2
    */
-  def balance(chars: List[Char]): Boolean = ???
+  def balance(chars: List[Char]): Boolean = {
+
+    def balancePairs(str: List[Char], openCount: Int): Boolean = {
+      println(str.mkString + ": openCount=" + openCount)
+
+      if (str.isEmpty) openCount == 0
+      else if (openCount == 0 && str.head == ')') false
+      else {
+        def headScore = if (str.head == '(') 1 else if (str.head == ')') -1 else 0
+        balancePairs(str.tail, openCount + headScore)
+      }
+    }
+
+    if (chars.isEmpty) true
+    else balancePairs(chars, 0)
+  }
 
   /**
    * Exercise 3
    */
-  def countChange(money: Int, coins: List[Int]): Int = ???
+  def countChange(money: Int, coins: List[Int]): Int = {
+
+    if (money < 1) 1
+    else {
+      val validDenominations = coins.filter((c:Int) => c <= money)
+      if (coins.isEmpty || validDenominations.isEmpty) 0
+      else -1 //FIXME
+    }
+  }
 }
