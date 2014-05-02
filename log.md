@@ -13,3 +13,11 @@
 	* sum/max recursive solutions, submit
 	* learned about styleCheck
 01:11
+
+
+4/30:
+19:15-21:20
+	* Week 1 videos, Martin's OSCON youtube video
+
+5/1:
+21:45-
