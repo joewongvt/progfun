@@ -14,7 +14,13 @@ object Main {
   /**
    * Exercise 1
    */
-  def pascal(c: Int, r: Int): Int = ???
+  def pascal(c: Int, r: Int): Int = {
+    // n == row, k == col
+    // The binomial coefficient \scriptstyle {n \choose k} is conventionally set to zero if k is either less than zero or greater than n
+    if (r < 0 || c < 0 || c > r) 0
+    else if (c == 0 || c==r) 1
+    else pascal(c-1, r-1) + pascal(c,r-1)
+  }
 
   /**
    * Exercise 2

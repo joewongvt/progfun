@@ -17,5 +17,9 @@
 	* Week 1 videos, Martin's OSCON youtube video
 
 5/1:
-21:45-21:55:
+21:45-22:00:
 	* Download/sbt setup week 1 assignment
+
+5/2:
+00:00-00:30:
+	* Pascal's triangle
