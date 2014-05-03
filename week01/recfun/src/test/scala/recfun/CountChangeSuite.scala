@@ -39,4 +39,12 @@ class CountChangeSuite extends FunSuite {
   test("countChange: CHF < all denominations") {
     assert(countChange(1, List(5, 10, 20)) === 0)
   }
+
+  test("countChange: CHF contains a 0 coin") {
+    assert(countChange(100, List(25, 50, 0)) === 3)
+  }
+
+  test("countChange: CHF contains a negative coin") {
+    assert(countChange(100, List(25, 50, 0, -10)) === 3)
+  }
 }

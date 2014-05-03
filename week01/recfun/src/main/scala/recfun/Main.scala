@@ -28,8 +28,6 @@ object Main {
   def balance(chars: List[Char]): Boolean = {
 
     def balancePairs(str: List[Char], openCount: Int): Boolean = {
-      println(str.mkString + ": openCount=" + openCount)
-
       if (str.isEmpty) openCount == 0
       else if (openCount == 0 && str.head == ')') false
       else {
@@ -46,12 +44,51 @@ object Main {
    * Exercise 3
    */
   def countChange(money: Int, coins: List[Int]): Int = {
-
-    if (money < 1) 1
-    else {
-      val validDenominations = coins.filter((c:Int) => c <= money)
-      if (coins.isEmpty || validDenominations.isEmpty) 0
-      else -1 //FIXME
-    }
+    recursiveCountChange(money, unique(coins))
   }
+
+  def unique(l: List[Int]): List[Int] = {
+    removeDuplicatesAndIllegalValues(l, List())
+  }
+
+  def removeDuplicatesAndIllegalValues(l: List[Int], dedup: List[Int]): List[Int] = {
+    if (l.isEmpty) dedup
+    else if (l.head > 0 && !listContains(dedup, l.head)) removeDuplicatesAndIllegalValues(l.tail, dedup :+ l.head)
+    else removeDuplicatesAndIllegalValues(l.tail, dedup)
+  }
+
+  def listContains(l: List[Int], v: Int): Boolean = {
+    if (l.isEmpty) false
+    else if (l.head == v) true
+    else listContains(l.tail, v)
+  }
+
+
+  def recursiveCountChange(a: Int, n: List[Int]): Int = {
+    // assumes n is deduplicated and negative values are removed
+
+    /* is this integration by parts?
+    change a with n kinds of coins, from SICP
+
+    If a is exactly 0, we should count that as 1 way to make change.
+    If a is less than 0, we should count that as 0 ways to make change.
+    If n is 0, we should count that as 0 ways to make change.
+    */
+
+    if (a == 0) 1
+    else if (a < 0) 0
+    else if (n.isEmpty) 0
+    else recursiveCountChange(a, n.tail) + recursiveCountChange(a-n.head, n)
+
+    // a = 100; n = [50, 25]
+    // rcc(100, 25)                                                                    + rcc(50,[50,25])
+    // rcc(100, empty) + rcc(75, 25)                                                   + rcc(50, 25)                                  + rcc(0, [50, 25])
+    // 0               + rcc(75, empty) + rcc(50, 25)                                  + rcc(50, empty) + rcc(25, 25)                 + 1
+    // 0               + 0              + rcc(50, empty) + rcc(25,25)                  + 0              + rcc(25, empty) + rcc(0, 25) + 1
+    // 0               + 0              + 0              + rcc(25, empty) + rcc(0, 25) + 0              + 0              + 1          + 1
+    // 0               + 0              + 0              + 0              + 1          + 0              + 0              + 1          + 1
+    // 3
+
+  }
+
 }
