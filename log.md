@@ -38,3 +38,6 @@
 #### 5/10
 * 00:00-01:00
 	* Video lectures 2.1-2.4 (HOF, Currying, Fixed Points, Scala Syntax)
+* 20:50-22:50
+	* Assignment 2.1
+	* Assignment 2.2
