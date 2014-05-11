@@ -83,6 +83,14 @@ class FunSetSuite extends FunSuite {
     val anyNumber = (x:Int) => true
     val noNumber = (x:Int) => false
     val emptySet = (s:Set) => !exists(s,anyNumber)
+
+    def listSet(l: List[Int]): Set = {
+      def iter(i: List[Int], s: Set): Set = {
+        if (i.isEmpty) s
+        else iter(i.tail, union(s, singletonSet(i.head)))
+      }
+      iter(l, intersect(s1,s2))
+    }
   }
 
   /**
@@ -198,7 +206,7 @@ class FunSetSuite extends FunSuite {
       assert(!exists(s, x => x>5), "u(1,2,3) contains a number > 5")
       assert(emptySet(intersect(s1,s2)), "intersect(1,2) is not empty")
       //Is the the only way to define an empty set !exists(emptySet, anyNumber), or can I do something like this?
-      //assert(exists(intersect(s1,s2), noNumber), "interesect(1,2) does not contain noNumber")
+      //assert(exists(intersect(s1,s2), noNumber), "intersect(1,2) does not contain noNumber")
     }
   }
 
@@ -206,11 +214,23 @@ class FunSetSuite extends FunSuite {
     new TestSets {
       val s = union(s1,s2)
 
+      val times2 = map(s, x => x*2)
+      assert(!emptySet(times2), "set of doubled values should not be empty")
+
       val d = diff(map(s, x => x*2), union(singletonSet(2), singletonSet(4)))
       assert(emptySet(d), "doubling of u(1,2) contains numbers not 2 or 4")
 
       val e = map(intersect(s1,s2), x => -x)
       assert(emptySet(e), "empty set should map to empty set")
+
+      val f = diff(map(s, x => x-1), union(singletonSet(0), singletonSet(1)))
+      assert(emptySet(f), "addition operation on set did not succeed")
+
+      val t = listSet(List(1,3,4,5,7,1000))
+      val u = listSet(List(0,2,3,4,6,999))
+
+      val g = map(t, x => x-1)
+      assert(emptySet(diff(g, u)), "edge case failed")
     }
   }
 }
