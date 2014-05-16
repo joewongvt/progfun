@@ -41,3 +41,7 @@
 * 20:50-23:35
 	* Assignment 2.1
 	* Assignment 2.2
+
+#### 5/15
+* 22:00-23:15
+	* Video lectures 2.5-2.7 (Functions & Data, More Fun with Rationals, Evaluation & Operators)
