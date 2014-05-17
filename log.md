@@ -45,3 +45,14 @@
 #### 5/15
 * 22:00-23:15
 	* Video lectures 2.5-2.7 (Functions & Data, More Fun with Rationals, Evaluation & Operators)
+
+#### 5/18
+* 23:00 - 04:00
+	* Assignment 3 
+		- struggled with inefficient implementation of moreRetweetsThan, waffled between calculating leastRetweets and mostRetweets by not considering placing the recursive call directly in the 2nd argument of Cons()
+		- used try/catch for control flow, inefficient
+
+#### 5/19
+* 12:00 - 13:00
+	* Clean up assignment 3 for git checkin
+	* Video lectures (I really should have watched these earlier)
