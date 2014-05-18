@@ -51,8 +51,9 @@
 	* Assignment 3 
 		- struggled with inefficient implementation of moreRetweetsThan, waffled between calculating leastRetweets and mostRetweets by not considering placing the recursive call directly in the 2nd argument of Cons()
 		- used try/catch for control flow, inefficient
+		- good forum resources are [here](https://class.coursera.org/progfun-004/forum/thread?thread_id=739)
 
 #### 5/19
-* 12:00 - 13:00
+* 12:00 - 14:00
 	* Clean up assignment 3 for git checkin
 	* Video lectures (I really should have watched these earlier)
