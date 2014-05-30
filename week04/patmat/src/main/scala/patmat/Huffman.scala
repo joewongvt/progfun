@@ -25,10 +25,18 @@ object Huffman {
 
 
   // Part 1: Basics
+  // i must be missing something - wouldn't inheritance be a better way? The abstract class declares a method weight,
+  //    which is in turn implemented by both Fork & Leaf?  the Fork impl would then recurse through the left and right?
 
-  def weight(tree: CodeTree): Int = ??? // tree match ...
+  def weight(tree: CodeTree): Int = tree match {
+    case Leaf(c, w) => w
+    case Fork(l, r, c, w) => w // or should this be weight(l) + weight(r)?
+  }
 
-  def chars(tree: CodeTree): List[Char] = ??? // tree match ...
+  def chars(tree: CodeTree): List[Char] = tree match {
+    case Leaf(c, w) => List(c)
+    case Fork(l,r,c,w) => c // or should this be chars(l) + chars(r), ignoring the type mismatch?
+  }
 
   def makeCodeTree(left: CodeTree, right: CodeTree) =
     Fork(left, right, chars(left) ::: chars(right), weight(left) + weight(right))
