@@ -57,3 +57,12 @@
 * 12:00 - 14:00
 	* Clean up assignment 3 for git checkin
 	* Video lectures (I really should have watched these earlier)
+
+#### 5/29
+* 23:00-00:30
+	* Video lectures
+	* initial solution for 1st part of huffman coding
+
+#### 5/30
+* 23:00 - 04:00
+	* complete huffman coding and submit
