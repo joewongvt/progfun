@@ -66,3 +66,13 @@
 #### 5/30
 * 23:00 - 04:00
 	* complete huffman coding and submit
+
+#### 6/13
+* 21:00-11:30
+	* videos for week 5
+
+#### 6/14 - 6/15
+* 11:00-04:30, with ~5 hours of break
+	* videos 7-1 -> 7-4 (1st part of week 6)
+	* Anagrams assignment
+	* Download last assignment
