@@ -1,3 +1,24 @@
+### Hour summary
+<pre>
+ 95  1:35
+ 41  0:41
+125  2:05
+ 15  0:15
+ 30  0:30
+120  2:00
+180  3:00
+ 60  1:00
+165  2:45
+300  5:00
+ 90  1:30
+300  5:00
+ 30  0:30
+690  11:30
+----------
+2241 37.35
+</pre>
+
+### Log
 #### 4/24
 
 * 21:45-23:20:
@@ -68,11 +89,12 @@
 	* complete huffman coding and submit
 
 #### 6/13
-* 21:00-11:30
+* 21:00-21:30
 	* videos for week 5
 
 #### 6/14 - 6/15
-* 11:00-04:30, with ~5 hours of break
+* 11:00-04:30, with ~6 hours of break
 	* videos 7-1 -> 7-4 (1st part of week 6)
 	* Anagrams assignment
 	* Download last assignment
+
