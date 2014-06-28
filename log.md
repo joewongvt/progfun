@@ -16,8 +16,9 @@
 690  11:30
 120   2:00
 150   2:30
+155   2:35
 ----------
-2511 41:51
+2666 44:26
 </pre>
 
 ### Log
@@ -109,8 +110,11 @@
 	* Week 8 videos
 	* Play bloxorz, read assignment and think
 
-#### 6/26-6/27
+#### 6/27-6/28
 * 22:00-00:35
 	* bloxorz: terrain, blocks, moves & neighbors, solving the game: finding neighbors
 
-
+#### 6/28
+* 10:30-
+	* bloxorz: solving the game:
+		* avoiding circles

@@ -76,6 +76,24 @@ class BloxorzSuite extends FunSuite {
     }
   }
 
+  test("new neighbors only - assignment example test") {
+    new Level1 {
+
+      val expSet = Set( (Block(Pos(2,1),Pos(3,1)), List(Down,Left,Up)) )
+
+      val actSet = newNeighborsOnly(
+        Set(
+          (Block(Pos(1,2),Pos(1,3)), List(Right,Left,Up)),
+          (Block(Pos(2,1),Pos(3,1)), List(Down,Left,Up))
+        ).toStream,
+
+        Set(Block(Pos(1,2),Pos(1,3)), Block(Pos(1,1),Pos(1,1)))
+      ).toSet
+
+      assert(actSet === expSet)
+    }
+  }
+
   test("optimal solution for level 1") {
     new Level1 {
       assert(solve(solution) == Block(goal, goal))
