@@ -44,12 +44,19 @@ class BloxorzSuite extends FunSuite {
     new Level1 {
       assert(terrain(Pos(0,0)), "0,0")
       assert(!terrain(Pos(4,11)), "4,11")
+      assert(!terrain(Pos(6,0)), "6,0")
+      assert(!terrain(Pos(-1,5)), "-1,5")
+      assert(!terrain(Pos(5,-2)), "5,-2")
+      assert(terrain(Pos(1,1)), "1,1")
     }
   }
 
   test("findChar level 1") {
     new Level1 {
-      assert(startPos == Pos(1,1))
+      assert(startPos === Pos(1,1))
+      assert(goal === Pos(4,7))
+      // I'd like to do this but vector is private
+//      assert(findChar('-', vector) === Pos(0,3))
     }
   }
 

@@ -52,7 +52,24 @@ trait StringParserTerrain extends GameDef {
    * a valid position (not a '-' character) inside the terrain described
    * by `levelVector`.
    */
-  def terrainFunction(levelVector: Vector[Vector[Char]]): Pos => Boolean = ???
+  def terrainFunction(levelVector: Vector[Vector[Char]]): Pos => Boolean = {
+
+     p:Pos => levelVector.applyOrElse(p.x, (r:Int) => Vector()).applyOrElse(p.y, (c:Int) => '-') != '-'
+//       I would prefer explicity checking for valid characters, to guard against invalid but non '-' characters,
+//           but the instructions clearly state "not a '-' character"
+//       val c = expr.toLower // expr = chained applyOrElses from above
+//       (c == 'o') || (c == 's') || (c == 't')
+
+
+//     This works too
+//     p:Pos => p match {
+//       case neg if neg.x < 0 || neg.y < 0 => false
+//       case tooLargeRow if tooLargeRow.x >= levelVector.size - 1 => false
+//       case tooLargeCol if tooLargeCol.y >= levelVector(tooLargeCol.x).size - 1 => false
+//       case justRight => levelVector(justRight.x)(justRight.y) != '-'
+//     }
+
+  }
 
   /**
    * This function should return the position of character `c` in the
@@ -62,7 +79,12 @@ trait StringParserTerrain extends GameDef {
    * Hint: you can use the functions `indexWhere` and / or `indexOf` of the
    * `Vector` class
    */
-  def findChar(c: Char, levelVector: Vector[Vector[Char]]): Pos = ???
+  def findChar(c: Char, levelVector: Vector[Vector[Char]]): Pos = {
+    // is there a more concise way of expressing this?
+    val row = levelVector.indexWhere( (row:Vector[Char]) => row.indexOf(c) != -1)
+    val col = levelVector(row).indexOf(c)
+    Pos( row  , col )
+  }
 
   private lazy val vector: Vector[Vector[Char]] =
     Vector(level.split("\n").map(str => Vector(str: _*)): _*)
