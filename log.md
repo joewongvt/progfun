@@ -109,5 +109,8 @@
 	* Week 8 videos
 	* Play bloxorz, read assignment and think
 
+#### 6/26-6/27
+* 22:00-00:35
+	* bloxorz: terrain, blocks, moves & neighbors, solving the game: finding neighbors
 
 
