@@ -17,8 +17,9 @@
 120   2:00
 150   2:30
 155   2:35
+60    1:00
 ----------
-2666 44:26
+2726 45:26
 </pre>
 
 ### Log
@@ -115,6 +116,10 @@
 	* bloxorz: terrain, blocks, moves & neighbors, solving the game: finding neighbors
 
 #### 6/28
-* 10:30-
+* 10:30-11:30
 	* bloxorz: solving the game:
 		* avoiding circles
+		* started from
+* 23:00-00:00
+	* bloxorz: finish & submit
+	* push to remote git repos, etc
